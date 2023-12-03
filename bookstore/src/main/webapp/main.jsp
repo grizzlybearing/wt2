@@ -1,8 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<c:set var="lang" value="${sessionScope.language ? sessionScope.language : 'ru'}"--%>
-<%--       scope="session"/>--%>
-<%--<c:out value="${sessionScope.language}"/>--%>
 <c:set var="jumb" value="${sessionScope.jumbotron}" scope="session"/>
 <c:set var="brkfst" value="${sessionScope.breakfast}" scope="session"/>
 <c:set var="strf" value="${sessionScope.streetfood}" scope="session"/>
@@ -28,16 +25,16 @@
         box-sizing: border-box;
         text-decoration: none;
         list-style: none;
-        color: black;
+        color: #1b1b1b;
         font-size: 16px;
-        font-family: Verdana, Tahoma, sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
     body{
-        background-color: maroon;
+        background-color:  #0D1F22;
     }
 
     header{
-        background-color: #f6b319;
+        background-color:  #F7EBEC;
         margin-bottom: 50px;
     }
     .lang{
@@ -51,26 +48,26 @@
         outline: none;
         height: 30px;
         padding: 5px;
-        background-color: #f6b319;
+        background-color: #B8E6C8;
     }
     .ru-lang{
         border-top-left-radius: 7px;
         border-bottom-left-radius: 7px;
-        border-right: 1px solid black;
+        border-right: 1px solid #1b1b1b;
         margin-right: 2px;
     }
     .en-lang{
         border-top-right-radius: 7px;
         border-bottom-right-radius: 7px;
-        border-left: 1px solid black;
+        border-left: 1px solid #1b1b1b;
     }
     .lang input.active{
-        border: 3px solid green;
+        border: 3px solid #557c3e;
         text-align: center;
         padding-top: 2px;
     }
     .lang input:hover{
-        background-color: #fac444;
+        background-color: #FAC444;
         cursor: pointer;
     }
     .container{
@@ -93,7 +90,7 @@
         height: auto;
     }
     .loginbtn{
-        color: #f6b319 !important;
+        color: #F6B319 !important;
         border-radius: 15px;
         padding: 10px;
         font-weight: bold;
@@ -109,7 +106,7 @@
         background-color: #61122f;
         border-radius: 15px;
         padding: 10px;
-        color: #f6b319;
+        color: #F6B319;
     }
     #tel:hover{
         background-color: #4b061f;
@@ -121,14 +118,14 @@
         background-color: #61122f;
         border-radius: 15px;
         padding: 10px;
-        color: #f6b319;
+        color: #F6B319;
         width: 100%;
         text-align: center;
     }
     .navigation-list a{
         margin-left: 20px;
         transition: 0.3s;
-        color:maroon;
+        color: maroon;
     }
 
     .navigation-list a:hover{
@@ -205,7 +202,7 @@
     }
 
     .menu-item{
-        width:25%;
+        width: 25%;
     }
     menu-category-btn{
         border: 0px;
@@ -249,7 +246,7 @@
     }
 
     footer{
-        background-color: #363636;
+        background-color: #264027;
         padding-top: 20px;
         padding-bottom: 50px;
     }
@@ -354,35 +351,34 @@
 </style>
 <body>
 <header>
-<div class="container">
-    <div class="navigation-bar">
-        <div class="brand">
-            <h1><a href="/demo1_war">BookStore</a></h1>
+    <div class="container">
+        <div class="navigation-bar">
+            <div class="brand">
+                <h1><a href="/demo1_war">BookStore</a></h1>
+            </div>
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <li class="navigation-list-item"><a href="/demo1_war"><fmt:message key="nav.main"/></a></li>
+                    <li class="navigation-list-item"><a href="/demo1_war/#menu"><fmt:message key="nav.menu"/></a></li>
+                    <li class="navigation-list-item"><a href="basket"><fmt:message key="nav.basket"/></a></li>
+                    <li class="navigation-list-item"><a id="tel" href="tel:+375291809834">+375(29)180-98-34</a></li>
+                    <c:if test="${sessionScope.Authorized}">
+                        <li class="navigation-list-item">
+                            <form method="POST">
+                                <input type="hidden" name="command" value="LOG_OUT" />
+                                <input type="submit" class="loginbtn" value="<fmt:message key="nav.logout"/>"/>
+                            </form>
+                        </li>
+                    </c:if>
+                    <c:if test="${!sessionScope.Authorized}">
+                        <li class="navigation-list-item">
+                            <a href="login" class="loginbtn"><fmt:message key="nav.login"/></a>
+                        </li>
+                    </c:if>
+                </ul>
+            </nav>
         </div>
-        <nav class="navigation">
-            <ul class="navigation-list">
-                <li class="navigation-list-item"><a href="/demo1_war"><fmt:message key="nav.main"/></a></li>
-                <li class="navigation-list-item"><a href="/demo1_war/#menu"><fmt:message key="nav.menu"/></a></li>
-                <li class="navigation-list-item"><a href="basket"><fmt:message key="nav.basket"/></a></li>
-                <li class="navigation-list-item"><a id="tel" href="tel:+375291809834">+375(29)180-98-34</a></li>
-                <c:if test="${sessionScope.Authorized}">
-                    <li class="navigation-list-item">
-                        <form method="POST">
-                            <input type="hidden" name="command" value="LOG_OUT" />
-                            <input type="submit" class="loginbtn" value="<fmt:message key="nav.logout"/>"/>
-                        </form>
-
-                    </li>
-                </c:if>
-                <c:if test="${!sessionScope.Authorized}">
-                    <li class="navigation-list-item">
-                        <a href="login" class="loginbtn"><fmt:message key="nav.login"/></a>
-                    </li>
-                </c:if>
-            </ul>
-        </nav>
     </div>
-</div>
 </header>
 <div class="container">
     <a class="telephone" href="tel:+375291809834">+375(29)180-98-34</a>
@@ -391,10 +387,7 @@
     <div class="lang">
         <form method="get" action="/demo1_war">
             <input type="hidden" name="lang" value="ru">
-<%--            <a href="single-category">--%>
-                <input type="submit" value="ru" class="ru-lang ${sessionScope.language == "ru" ? "active" : ""}">
-<%--            </a>--%>
-
+            <input type="submit" value="ru" class="ru-lang ${sessionScope.language == "ru" ? "active" : ""}">
         </form>
         <form method="get" action="/demo1_war">
             <input type="hidden" name="lang" value="en">
@@ -475,10 +468,9 @@
     <div class="container">
         <h3 class="footer-title"><fmt:message key="location.our"/></h3>
         <div class="map">
-            <a class="map-link" href="https://goo.gl/maps/JMnpTyQd8CUJm8pz7" target="_blank">
+            <a class="map-link" href="https://maps.app.goo.gl/4hZ9W667CsL851AS6" target="_blank">
                 <div class="map-item">
-                    <iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.1197435668223!2d27.59273715106426!3d53.911848039805776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfaefc7ace77%3A0x108d2d965ec4df2f!2z0YPQuy4g0JPQuNC60LDQu9C-IDksINCc0LjQvdGB0Lo!5e0!3m2!1sru!2sby!4v1677136102096!5m2!1sru!2sby" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4014.816358454044!2d27.579008600804585!3d53.91554003240021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0LHRg9C60LjQvdC40YHRgiDQvdC10LfQsNCy0LjRgdC40LzQvtGB0YLQuA!5e0!3m2!1sru!2sby!4v1701612845670!5m2!1sru!2sby" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <span class="map-title">map</span>
                 </div>
             </a>

@@ -17,21 +17,21 @@
 <style>
     * {
         padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        list-style: none;
-        color: black;
-        font-size: 16px;
-        font-family: Verdana, Tahoma, sans-serif;
+               margin: 0;
+               box-sizing: border-box;
+               text-decoration: none;
+               list-style: none;
+               color: #1b1b1b;
+               font-size: 16px;
+               font-family: 'Roboto', sans-serif;
     }
 
     body {
-        background-color: maroon;
+        background-color: #0D1F22;
     }
 
     header {
-        background-color: #f6b319;
+        background-color: #F7EBEC;
         margin-bottom: 50px;
     }
 
@@ -142,7 +142,7 @@
 
     .dish-item-img {
         width: 42%;
-        height: 170px;
+        height: 60%;
         position: relative;
     }
 
@@ -250,14 +250,14 @@
     <div class="container">
         <div class="navigation-bar">
             <div class="brand">
-                <h1><a href="/demo1_war">Restik</a></h1>
+                <h1><a href="/demo1_war">BookStore</a></h1>
             </div>
             <nav class="navigation">
                 <ul class="navigation-list">
                     <li class="navigation-list-item"><a href="/demo1_war"><fmt:message key="nav.main"/></a></li>
                     <li class="navigation-list-item"><a href="/demo1_war/#menu"><fmt:message key="nav.menu"/></a></li>
                     <li class="navigation-list-item"><a href="basket"><fmt:message key="nav.basket"/></a></li>
-                    <li class="navigation-list-item"><a id="tel" href="tel:+375331112233">+375(33)111-22-33</a></li>
+                    <li class="navigation-list-item"><a id="tel" href="tel:+375291809834">+375(29)180-98-34</a></li>
                     <c:if test="${sessionScope.Authorized}">
                         <li class="navigation-list-item">
                             <form method="POST">
@@ -320,13 +320,9 @@
     <div class="container">
         <h3 class="footer-title"><fmt:message key="location.our"/></h3>
         <div class="map">
-            <a class="map-link" href="https://goo.gl/maps/JMnpTyQd8CUJm8pz7" target="_blank">
+            <a class="map-link" href="https://maps.app.goo.gl/4hZ9W667CsL851AS6" target="_blank">
                 <div class="map-item">
-                    <iframe width="100%"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.1197435668223!2d27.59273715106426!3d53.911848039805776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfaefc7ace77%3A0x108d2d965ec4df2f!2z0YPQuy4g0JPQuNC60LDQu9C-IDksINCc0LjQvdGB0Lo!5e0!3m2!1sru!2sby!4v1677136102096!5m2!1sru!2sby"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4014.816358454044!2d27.579008600804585!3d53.91554003240021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0LHRg9C60LjQvdC40YHRgiDQvdC10LfQsNCy0LjRgdC40LzQvtGB0YLQuA!5e0!3m2!1sru!2sby!4v1701612845670!5m2!1sru!2sby" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <span class="map-title">map</span>
                 </div>
             </a>

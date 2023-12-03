@@ -7,7 +7,8 @@ import java.util.List;
 /**
  * Manages a pool of database connections.
  */
-public class ConnectionPool {
+public class
+ConnectionPool {
 
     // Constants defining database connection parameters
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/wt_lab2?serverTimezone=Europe/Moscow&useSSL=false";

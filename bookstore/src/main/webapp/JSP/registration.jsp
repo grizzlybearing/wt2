@@ -23,7 +23,7 @@
         font-size: 20px;
     }
     body{
-        background: #61122f;
+        background: #0D1F22;
     }
     .wrapper{
         text-align: center;
@@ -36,7 +36,7 @@
         border-radius: 20px;
         width: 450px;
         height: 300px;
-        background-color: #f6b319;
+        background-color: #F7EBEC;
         padding: 50px 40px 0px 40px;
         display: inline-block;
     }
